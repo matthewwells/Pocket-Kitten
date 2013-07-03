@@ -14,7 +14,7 @@ window.addEventListener('devicelight', function(event) {
 //-----------------------------------------------
 
 //creates url and loads image~~~~~~~~~~~~~~~~~~~~~~
-function setImage(lightValue) {
+function setImage() {
   var urlOrigin = 'http://placekitten.com/';
   if (lightValue < 50) {
     urlOrigin = 'http://placepuppy.it/';
@@ -33,18 +33,18 @@ function setImage(lightValue) {
   domElement.src = sourceUrl;
 
 //HERE FIRST--------------------------------
-  navigator.vibrate([0,300,200]);
+//  navigator.vibrate([0,300,200]);
 //-------------------------------------------
 }
 
 //run once on app load
 setImage();
 //run when clicked/tapped
-document.body.addEventListener('click', function onKittenSmashed(evt) {
-  setImage(lightValue);
+document.body.addEventListener('click', function() {
+  setImage();
 });
-document.body.addEventListener('touchstart', function onKittenSmashed(evt) {
-  setImage(lightValue);
+document.body.addEventListener('touchstart', function() {
+  setImage();
 });
 
 //do install button shizzle~~~~~~~~~~~~~~~~~~~~~~~~~~~
